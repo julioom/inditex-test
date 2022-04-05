@@ -1,0 +1,17 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px 10px;
+	background-color: lightgrey;
+	.title {
+		text-decoration: auto;
+		font-size: 24px;
+		color: black;
+	}
+
+	.cart-count {
+		font-weight: bold;
+		font-size: 16px;
+		align-self: center;
+	}
+}

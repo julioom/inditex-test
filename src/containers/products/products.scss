@@ -1,0 +1,29 @@
+.products-container {
+	margin: 20px 0;
+	padding: 20px 10px;
+	background-color: lightcyan;
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+		font-size: 16px;
+	}
+
+	&__body {
+		padding: 20px 0;
+		&-content {
+			display: grid;
+			grid-template-columns: auto auto auto auto;
+		}
+	}
+}
+
+@media (max-width: 968px) {
+	.products-container {
+		&__body {
+			&-content {
+				grid-template-columns: auto auto auto;
+			}
+		}
+	}
+}

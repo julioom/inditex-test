@@ -24,5 +24,7 @@
         "react"
     ],
     "rules": {
+        "no-unused-vars": "off",
+        "react/prop-types": 0
     }
 }
