@@ -1,5 +1,4 @@
 .products-container {
-	margin: 20px 0;
 	padding: 20px 10px;
 	background-color: lightcyan;
 
@@ -15,6 +14,12 @@
 			display: grid;
 			grid-template-columns: auto auto auto auto;
 		}
+		.no-products {
+			height: 200px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 	}
 }
 
@@ -23,6 +28,16 @@
 		&__body {
 			&-content {
 				grid-template-columns: auto auto auto;
+			}
+		}
+	}
+}
+
+@media (max-width: 770px) {
+	.products-container {
+		&__body {
+			&-content {
+				grid-template-columns: auto auto;
 			}
 		}
 	}
