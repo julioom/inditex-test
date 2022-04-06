@@ -20,9 +20,10 @@ export const getProductsFail = (error) => {
 	};
 };
 
-export const getProductDetailRequest = () => {
+export const getProductDetailRequest = (productId) => {
 	return {
 		type: actionTypes.GET_PRODUCT_DETAIL_REQUEST,
+		productId,
 	};
 };
 

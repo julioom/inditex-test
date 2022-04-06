@@ -1,0 +1,27 @@
+.product-actions {
+	padding: 15px;
+	.title {
+		font-size: 14px;
+		text-decoration: underline;
+		font-weight: bold;
+	}
+
+	.selectors {
+		padding: 10px 0;
+		font-size: 12px;
+	}
+
+	.add-cart {
+		padding: 5px 10px;
+		border: 1px blue solid;
+		border-radius: 10px;
+		background: transparent;
+		color: blue;
+		margin: 20px;
+		cursor: pointer;
+	}
+
+	.loading {
+		height: 100px;
+	}
+}

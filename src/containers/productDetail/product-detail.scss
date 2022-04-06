@@ -1,0 +1,7 @@
+.product-detail {
+	display: flex;
+
+	& > div {
+		width: 50%;
+	}
+}

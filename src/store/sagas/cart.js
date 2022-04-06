@@ -11,7 +11,7 @@ export function* addProductToCartSaga(action) {
 			storageCode: action.storageCode,
 		});
 
-		yield put(actions.addProductToCartSuccess(response.count));
+		yield put(actions.addProductToCartSuccess(response.data.count));
 	} catch (error) {
 		yield put(actions.addProductToCartFail(error));
 	}

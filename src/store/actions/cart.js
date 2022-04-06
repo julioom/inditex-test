@@ -1,8 +1,11 @@
 import * as actionTypes from "./actionTypes";
 
-export const addProductToCartRequest = () => {
+export const addProductToCartRequest = (id, colorCode, storageCode) => {
 	return {
 		type: actionTypes.ADD_PRODUCT_TO_CART_REQUEST,
+		id,
+		colorCode,
+		storageCode,
 	};
 };
 export const addProductToCartSuccess = (count) => {
