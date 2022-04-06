@@ -30,7 +30,7 @@ const Products = () => {
 	return (
 		<div className="products-container">
 			<div className="products-container__header">
-				<span>PRODUCTS</span>
+				<span className="title">PRODUCTS</span>
 				<Search onChange={onChangeFilter} value={filterText} />
 			</div>
 			<div className="products-container__body">

@@ -5,25 +5,37 @@ const initialState = {
 	products: [],
 	productDetail: {},
 	expirationTime: null,
+	loading: false,
 };
 
 const getProductsRequest = (state, action) => {
-	return updateObject(state, { products: [] });
+	return updateObject(state, { products: [], loading: true });
 };
 const getProductsSuccess = (state, action) => {
-	return updateObject(state, { products: action.products });
+	return updateObject(state, { products: action.products, loading: false });
 };
 const getProductsFail = (state, action) => {
-	return updateObject(state, { error: action.error, products: [] });
+	return updateObject(state, {
+		error: action.error,
+		products: [],
+		loading: false,
+	});
 };
 const getProductDetailRequest = (state, action) => {
-	return updateObject(state, { productDetail: {} });
+	return updateObject(state, { productDetail: {}, loading: true });
 };
 const getProductDetailSuccess = (state, action) => {
-	return updateObject(state, { productDetail: action.productDetail });
+	return updateObject(state, {
+		productDetail: action.productDetail,
+		loading: false,
+	});
 };
 const getProductDetailFail = (state, action) => {
-	return updateObject(state, { error: action.error, productDetail: {} });
+	return updateObject(state, {
+		error: action.error,
+		productDetail: {},
+		loading: false,
+	});
 };
 
 const reducer = (state = initialState, action) => {
