@@ -5,6 +5,7 @@ import * as actions from "../../store/actions";
 import ProductImage from "../../components/product-image/product-image";
 import ProductDescription from "../../components/product-description/product-description";
 import ProductActions from "../../components/product-actions/product-actions";
+import Header from "../../components/header/header";
 
 const ProductDetail = ({ match }) => {
 	const [color, setColor] = useState("");
@@ -45,20 +46,23 @@ const ProductDetail = ({ match }) => {
 		}
 	};
 	return (
-		<div className="product-detail">
-			<ProductImage image={product.imgUrl} />
-			<div>
-				<ProductDescription {...product} />
-				<ProductActions
-					options={product.options}
-					defaultColorValue={color}
-					defaultMemoryValue={memory}
-					onChangeColor={onChangeColor}
-					onChangeMemory={onChangeMemory}
-					onAddToCart={onAddToCart}
-				/>
+		<>
+			<Header />
+			<div className="product-detail">
+				<ProductImage image={product.imgUrl} />
+				<div>
+					<ProductDescription {...product} />
+					<ProductActions
+						options={product.options}
+						defaultColorValue={color}
+						defaultMemoryValue={memory}
+						onChangeColor={onChangeColor}
+						onChangeMemory={onChangeMemory}
+						onAddToCart={onAddToCart}
+					/>
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

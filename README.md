@@ -1,6 +1,6 @@
 # Possible Improvements
 
-- Add libraries as I18N for translations or Currency Formatter for the currency formatter, e.g.
+- Add libraries as I18N for translations (product detail description list, for example) or Currency Formatter for the currency formatter.
 - Add components library as AntDesign, for example, or improve styles
 - Add lazy loading for the products page
 - Can be used localStorage to save the expiration time of the data if we want to have it even if we close the web

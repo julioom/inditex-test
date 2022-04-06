@@ -1,34 +1,37 @@
-import reducer from './auth';
-import * as actionTypes from '../actions/actionTypes';
+import reducer from "./products";
+import * as actionTypes from "../actions/actionTypes";
 
-describe('auth reducer', () => {
-    it('should return the initial state', () => {
-        expect(reducer(undefined, {})).toEqual({
-            token: null,
-            userId: null,
-            error: null,
-            loading: false,
-            authRedirectPath: '/'
-        });
-    });
+const products = [
+	{ brand: "acer", model: "ab" },
+	{ brand: "acer 3", model: "bk" },
+];
 
-    it('should store the token upon login', () => {
-        expect(reducer({
-            token: null,
-            userId: null,
-            error: null,
-            loading: false,
-            authRedirectPath: '/'
-        }, { 
-            type: actionTypes.AUTH_SUCCESS,
-            idToken: 'some-token',
-            userId: 'some-user-id'
-         })).toEqual({
-            token: 'some-token',
-            userId: 'some-user-id',
-            error: null,
-            loading: false,
-            authRedirectPath: '/'
-        });
-    })
+describe("products reducer", () => {
+	it("should return the initial state", () => {
+		expect(reducer(undefined, {})).toEqual({
+			products: [],
+			productDetail: {},
+			loading: false,
+		});
+	});
+
+	it("should store all the products", () => {
+		expect(
+			reducer(
+				{
+					products: [],
+					productDetail: {},
+					loading: false,
+				},
+				{
+					type: actionTypes.GET_PRODUCTS_SUCCESS,
+					products: products,
+				}
+			)
+		).toEqual({
+			products: products,
+			productDetail: {},
+			loading: false,
+		});
+	});
 });

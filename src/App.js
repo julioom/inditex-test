@@ -21,7 +21,6 @@ const App = () => {
 		<Suspense fallback={<Overlay />}>
 			<div className="container">
 				{productLoading && <Overlay />}
-				<Header />
 				<Switch>
 					{routes.map((r) => {
 						const Component = r.component;
@@ -34,16 +33,6 @@ const App = () => {
 							/>
 						);
 					})}
-					{/* <Route
-						path="/products"
-						exact
-						render={(routeProps) => <Products {...routeProps} />}
-					/>
-					<Route
-						path="/products/:id"
-						exact
-						render={(routeProps) => <ProductDetail {...routeProps} />}
-					/> */}
 					<Redirect to="/products" />
 				</Switch>
 			</div>

@@ -1,7 +1,7 @@
 // In this hook, we can add whatever config or check that we want
 const useFilter = (products) => {
 	const onFilter = (text) => {
-		let filteredProducts = products;
+		let filteredProducts = products || [];
 		if (text) {
 			filteredProducts = products.filter(
 				(p) =>

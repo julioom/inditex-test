@@ -2,7 +2,7 @@ import React from "react";
 import "./header.scss";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { withRouter } from "react-router-dom";
+import { withRouter } from "react-router";
 
 const generateBreadCrumb = (location) => {
 	const pathname = location.pathname;

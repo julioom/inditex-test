@@ -1,5 +1,6 @@
 import React from "react";
 import "./product-actions.scss";
+import ProductAction from "../product-action/product-action";
 
 const ProductActions = ({
 	options,
@@ -14,49 +15,25 @@ const ProductActions = ({
 		<div className="product-actions">
 			{options ? (
 				<>
-					<span className="title">ACTIONS</span>
+					<span className="title">ACCIONES</span>
 					<div className="selectors">
-						<div>
-							Color:{" "}
-							<select
-								value={defaultColorValue}
-								onChange={(e) => onChangeColor(e.target.value)}
-							>
-								<option value=""></option>
-								{options.colors.map((c) => (
-									<option
-										key={c.code}
-										value={c.code}
-										selected={defaultColorValue === c.code}
-									>
-										{c.name}
-									</option>
-								))}
-							</select>{" "}
-						</div>
-						<div>
-							Almacenamiento:{" "}
-							<select
-								value={defaultMemoryValue}
-								onChange={(e) => onChangeMemory(e.target.value)}
-							>
-								<option value=""></option>
-								{options.storages.map((c) => (
-									<option
-										key={c.code}
-										value={c.code}
-										selected={defaultMemoryValue === c.code}
-									>
-										{c.name}
-									</option>
-								))}
-							</select>
-						</div>
-						<div>
-							<button className="add-cart" onClick={onAddToCart}>
-								Añadir al carrito
-							</button>
-						</div>
+						<ProductAction
+							title="Color"
+							value={defaultColorValue}
+							onChange={onChangeColor}
+							options={options.colors}
+						/>
+						<ProductAction
+							title="Almacenamiento"
+							value={defaultMemoryValue}
+							onChange={onChangeMemory}
+							options={options.storages}
+						/>
+					</div>
+					<div>
+						<button className="add-cart" onClick={onAddToCart}>
+							Añadir al carrito
+						</button>
 					</div>
 				</>
 			) : (
