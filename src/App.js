@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch, Redirect, withRouter } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/header/header";
 import { useSelector } from "react-redux";
@@ -10,6 +10,11 @@ const ProductDetail = React.lazy(() =>
 	import("./containers/productDetail/index.jsx")
 );
 
+const routes = [
+	{ path: "/products", component: Products },
+	{ path: "/products/:id", component: ProductDetail },
+];
+
 const App = () => {
 	const productLoading = useSelector((state) => state.products.loading);
 	return (
@@ -18,7 +23,18 @@ const App = () => {
 				{productLoading && <Overlay />}
 				<Header />
 				<Switch>
-					<Route
+					{routes.map((r) => {
+						const Component = r.component;
+						return (
+							<Route
+								key={r.path}
+								path={r.path}
+								exact
+								render={(routeProps) => <Component {...routeProps} />}
+							/>
+						);
+					})}
+					{/* <Route
 						path="/products"
 						exact
 						render={(routeProps) => <Products {...routeProps} />}
@@ -27,7 +43,7 @@ const App = () => {
 						path="/products/:id"
 						exact
 						render={(routeProps) => <ProductDetail {...routeProps} />}
-					/>
+					/> */}
 					<Redirect to="/products" />
 				</Switch>
 			</div>

@@ -6,7 +6,11 @@ const useFilter = (products) => {
 			filteredProducts = products.filter(
 				(p) =>
 					p.brand.toLowerCase().includes(text) ||
-					p.model.toLowerCase().includes(text)
+					p.model.toLowerCase().includes(text) ||
+					(p.brand.toLowerCase() + " - " + p.model.toLowerCase()).includes(
+						text
+					) ||
+					(p.brand.toLowerCase() + " " + p.model.toLowerCase()).includes(text)
 			);
 		}
 		return filteredProducts;

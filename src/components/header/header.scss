@@ -1,13 +1,22 @@
 .header {
 	display: flex;
-	justify-content: space-between;
 	padding: 20px;
 	background-color: lightgrey;
 	margin-bottom: 20px;
 	.title {
 		text-decoration: auto;
-		font-size: 24px;
+		font-size: 28px;
 		color: black;
+	}
+
+	.inline-list {
+		align-self: center;
+		margin-left: 40px;
+
+		& a {
+			text-decoration: none;
+			color: #333333;
+		}
 	}
 
 	.cart-count {
@@ -15,5 +24,6 @@
 		font-size: 16px;
 		align-self: center;
 		margin-right: 20px;
+		margin-left: auto;
 	}
 }
