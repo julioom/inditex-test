@@ -14,7 +14,9 @@ const Products = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
-		dispatch(actions.getProductsRequest());
+		if (!products || !products.length) {
+			dispatch(actions.getProductsRequest());
+		}
 	}, []);
 
 	useEffect(() => {
@@ -30,7 +32,7 @@ const Products = () => {
 	return (
 		<div className="products-container">
 			<div className="products-container__header">
-				<span className="title">PRODUCTS</span>
+				<span className="title">PRODUCTOS</span>
 				<Search onChange={onChangeFilter} value={filterText} />
 			</div>
 			<div className="products-container__body">

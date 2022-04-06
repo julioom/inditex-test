@@ -3,8 +3,6 @@ import { updateObject } from "../../shared/utils";
 
 const initialState = {
 	count: 0,
-	loading: false,
-	expirationTime: null,
 };
 
 const addProductToCartSuccess = (state, action) => {

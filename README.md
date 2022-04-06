@@ -1,3 +1,11 @@
+# Possible Improvements
+
+- Add libraries as I18N for translations or Currency Formatter for the currency formatter, e.g.
+- Add components library as AntDesign, for example, or improve styles
+- Add lazy loading for the products page
+- Can be used localStorage to save the expiration time of the data if we want to have it even if we close the web
+- It is created the happy path but we can add some handling for errors
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

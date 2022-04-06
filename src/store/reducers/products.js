@@ -4,12 +4,15 @@ import { updateObject } from "../../shared/utils";
 const initialState = {
 	products: [],
 	productDetail: {},
-	expirationTime: null,
 	loading: false,
 };
 
 const getProductsRequest = (state, action) => {
-	return updateObject(state, { products: [], loading: true });
+	return updateObject(state, {
+		products: [],
+		productDetail: {},
+		loading: true,
+	});
 };
 const getProductsSuccess = (state, action) => {
 	return updateObject(state, { products: action.products, loading: false });

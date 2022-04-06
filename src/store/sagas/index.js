@@ -2,7 +2,6 @@ import { takeEvery, all, takeLatest } from "redux-saga/effects";
 
 import * as actionTypes from "../actions/actionTypes";
 import { getProductsSaga, getProductDetailSaga } from "./products";
-
 import { addProductToCartSaga } from "./cart";
 
 export function* watchProducts() {
