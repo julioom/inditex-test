@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/header/header";
 import { useSelector } from "react-redux";
+import Overlay from "./components/overlay/overlay";
 
 const Products = React.lazy(() => import("./containers/products/index.jsx"));
 const ProductDetail = React.lazy(() =>
@@ -12,9 +13,9 @@ const ProductDetail = React.lazy(() =>
 const App = () => {
 	const productLoading = useSelector((state) => state.products.loading);
 	return (
-		<Suspense fallback={<div>Loading</div>}>
+		<Suspense fallback={<Overlay />}>
 			<div className="container">
-				{productLoading && <div className="overlay-loading">CARGANDO ...</div>}
+				{productLoading && <Overlay />}
 				<Header />
 				<Switch>
 					<Route

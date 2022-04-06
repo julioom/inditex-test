@@ -41,6 +41,8 @@ const ProductDescription = ({
 				(acc, curr, index) => (index === 0 ? curr : acc + " - " + curr),
 				""
 			);
+		} else if (!e) {
+			return null;
 		} else {
 			res = e;
 		}
@@ -53,7 +55,7 @@ const ProductDescription = ({
 	return (
 		<div className="product-description">
 			<span className="title">DESCRIPTION</span>
-			<ul>{elements.map((e) => renderElement(e))}</ul>
+			<ul>{elements.map((e) => renderElement(e)).filter(Boolean)}</ul>
 		</div>
 	);
 };
